@@ -2,170 +2,131 @@
 
 > Predicting loan default risk using Machine Learning to help financial institutions identify high-risk customers and make informed lending decisions.
 
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red?logo=streamlit)
+![XGBoost](https://img.shields.io/badge/Model-XGBoost-orange)
+![ROC-AUC](https://img.shields.io/badge/ROC--AUC-98%25-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 ---
 
 ## 📖 Project Overview
 
-Credit risk modelling is one of the most important applications of Machine Learning in the banking and finance industry.
+Credit risk modelling is one of the most critical applications of Machine Learning in the banking and finance industry. Lenders need reliable tools to assess whether a customer is likely to default before approving a loan.
 
-In this project, I built an end-to-end Credit Risk Prediction system that predicts whether a customer is likely to default on a loan based on customer demographics, loan details, and bureau information.
+In this project, I built an **end-to-end Credit Risk Prediction system** that predicts whether a customer is likely to default on a loan based on customer demographics, loan details, and bureau information.
 
-The project includes:
+**The project covers:**
 
 - Data Cleaning & Preprocessing
 - Feature Engineering
-- Handling Imbalanced Data
-- Feature Selection
-- Model Training
-- Hyperparameter Tuning
-- Model Evaluation
-- Streamlit Web Application
+- Handling Imbalanced Data (SMOTE & Undersampling)
+- Feature Selection (IV, VIF, Domain Knowledge)
+- Model Training & Hyperparameter Tuning
+- Model Evaluation using Banking-Grade Metrics
+- Streamlit Web Application Deployment
 
 ---
 
-# 📸 Application Screenshots
+## 📸 Application Screenshots
 
-## Home Page
-
+### Home Page
 ![Home Page](screenshots/home_page.png)
 
----
-
-## Prediction Result
-
-![Prediction](screenshots/prediction_result.png)
+### Prediction Result
+![Prediction Result](screenshots/prediction_result.png)
 
 ---
 
-# 🚀 Tech Stack
+## 🚀 Tech Stack
 
 | Category | Technologies |
-|-----------|--------------|
-| Language | Python |
-| Libraries | Pandas, NumPy, Scikit-Learn |
-| Models | Logistic Regression, Random Forest, XGBoost |
+|---|---|
+| Language | Python 3.10 |
+| Data Processing | Pandas, NumPy |
+| Machine Learning | Scikit-Learn, XGBoost |
+| Imbalanced Data | SMOTE, UnderSampling (imbalanced-learn) |
 | Hyperparameter Tuning | RandomizedSearchCV, Optuna |
-| Imbalanced Data | SMOTE, UnderSampling |
 | Model Evaluation | ROC-AUC, Gini, KS Statistic, Rank Ordering |
 | Deployment | Streamlit |
 | Model Serialization | Joblib |
 
 ---
 
-# 📂 Dataset
+## 📂 Dataset
 
-The dataset contains information about
+The dataset contains three categories of information:
 
-- Customer Details
-- Loan Information
-- Credit Bureau Information
+- **Customer Details** — Demographics and personal information
+- **Loan Information** — Loan amount, tenure, type
+- **Credit Bureau Information** — Past credit behaviour, delinquency history
 
-Target Variable
-
-```
-Default
-```
-
-- 1 → Customer Defaulted
-
-- 0 → Customer Did Not Default
+**Target Variable:** `Default`
+- `1` → Customer Defaulted
+- `0` → Customer Did Not Default
 
 ---
 
-
-````markdown
-# ⚙️ Project Workflow
+## ⚙️ Project Workflow
 
 | Stage | Description |
-|--------|-------------|
-| 📂 Dataset | Customer, Loan and Bureau data with **Default** as the target variable |
-| 🧹 Data Preprocessing | Missing value treatment, invalid value handling, feature engineering, scaling and feature selection using IV, VIF and domain knowledge |
-| ✂️ Train-Test Split | 75% Training, 25% Testing |
-| 🤖 Model Training | Logistic Regression, Random Forest and XGBoost with **SMOTE and Undersampling** to handle class imbalance |
-| ⚙️ Hyperparameter Optimization | RandomizedSearchCV and Optuna |
-| 📊 Model Evaluation | ROC-AUC, KS Statistic, Gini Coefficient, Rank Ordering and Classification Report |
+|---|---|
+| 📂 Dataset | Customer, Loan, and Bureau data with `Default` as the target variable |
+| 🧹 Data Preprocessing | Missing value treatment, invalid value handling, feature engineering, scaling |
+| 🔍 Feature Selection | Information Value (IV), VIF analysis, and domain knowledge |
+| ✂️ Train-Test Split | 75% Training — 25% Testing |
+| 🤖 Model Training | Logistic Regression, Random Forest, XGBoost with SMOTE and Undersampling |
+| ⚙️ Hyperparameter Tuning | RandomizedSearchCV and Optuna |
+| 📊 Model Evaluation | ROC-AUC, KS Statistic, Gini Coefficient, Rank Ordering, Classification Report |
 | 🚀 Deployment | Streamlit Web Application |
 
 ---
 
-# 🤖 Machine Learning Models
+## 🤖 Machine Learning Models
 
-The following models were trained and compared.
-
-| Model | Description |
-|--------|-------------|
-| Logistic Regression | Baseline Classification Model |
-| Random Forest | Ensemble Learning |
-| XGBoost | Gradient Boosting Model |
+| Model | Role |
+|---|---|
+| Logistic Regression | Baseline classification model |
+| Random Forest | Ensemble learning with bagging |
+| XGBoost | Gradient boosting — final selected model |
 
 ---
 
-# 🔧 Hyperparameter Tuning
-
-To improve model performance,
-
-- RandomizedSearchCV
-- Optuna
-
-were used for hyperparameter optimization.
-
----
-
-# 📊 Model Evaluation
-
-The models were evaluated using
-
-- ROC-AUC Score
-- Gini Coefficient
-- KS Statistic
-- Rank Ordering
-- Classification Report
-
----
-
-# 📈 Final Model Performance
+## 📈 Final Model Performance
 
 | Metric | Score |
-|----------|--------|
-| ROC-AUC | **98%** |
+|---|---|
+| ROC-AUC Score | **98%** |
 | Gini Coefficient | **96%** |
 | Top 3 Decile Capture Rate | **99.53%** |
 
 ---
 
-# 🎯 Key Insights
+## 🎯 Key Insights
 
-✅ Excellent discrimination between defaulters and non-defaulters.
-
-✅ Strong rank ordering capability.
-
-✅ High KS Statistic indicating effective separation of risky and safe customers.
-
-✅ Successfully identified high-risk customers with excellent predictive performance.
+- ✅ Excellent discrimination between defaulters and non-defaulters
+- ✅ Strong rank ordering capability — high-risk customers consistently scored higher
+- ✅ High KS Statistic indicating effective separation of risky and safe customers
+- ✅ Top 3 decile captures **99.53%** of all defaulters — highly actionable for lending decisions
 
 ---
 
-# 💻 Installation
+## 💻 Installation
 
-Clone the repository
+**Clone the repository**
 
 ```bash
 git clone https://github.com/Likhitha1234-lab/ml-project-credit-risk-model.git
-```
-
-Move into the project
-
-```bash
 cd ml-project-credit-risk-model
 ```
 
-Install dependencies
+**Install dependencies**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the Streamlit application
+**Run the Streamlit application**
 
 ```bash
 streamlit run main.py
@@ -173,32 +134,30 @@ streamlit run main.py
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```
-ml-project-credit-risk-model
+ml-project-credit-risk-model/
 │
-├── artifacts
-├── screenshots
-├── main.py
-├── prediction_helper.py
-├── requirements.txt
-├── README.md
+├── artifacts/               # Saved models and encoders
+├── screenshots/             # App screenshots
+├── main.py                  # Streamlit application
+├── prediction_helper.py     # Prediction logic and preprocessing
+├── requirements.txt         # Python dependencies
+└── README.md                # Project documentation
 ```
 
 ---
 
-# 👩‍💻 Author
+## 👩‍💻 Author
 
-**Likhitha N**
+**Likhitha N** — Aspiring AI & Data Scientist
 
-Aspiring AI & Data Scientist
+Skills: Python · Machine Learning · Statistics · SQL · Streamlit · XGBoost
 
-- Python
-- Machine Learning
-- Statistics
-- SQL
-- Streamlit
-- XGBoost
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](www.linkedin.com/in/likhitha-n-79b1152b7)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black?logo=github)](https://github.com/Likhitha1234-lab)
 
 ---
+
+⭐ *If you found this project useful, consider giving it a star!*
