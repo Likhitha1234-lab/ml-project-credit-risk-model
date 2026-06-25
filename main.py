@@ -337,6 +337,6 @@ if st.button('Calculate Credit Risk'):
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div style="text-align:center; margin-top:2.5rem; font-size:.75rem; color:#9A9187;">
-    Lauki Finance · Credit Risk Model · Codebasics ML Course
+    Lauki Finance · Credit Risk Model 
 </div>
 """, unsafe_allow_html=True)

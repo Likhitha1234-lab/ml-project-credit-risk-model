@@ -6,7 +6,6 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-Deployed-red?logo=streamlit)
 ![Model](https://img.shields.io/badge/Model-Logistic%20Regression-orange)
 ![ROC-AUC](https://img.shields.io/badge/ROC--AUC-98%25-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
