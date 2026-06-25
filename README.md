@@ -72,38 +72,19 @@ Default
 
 ---
 
+
+````markdown
 # ⚙️ Project Workflow
 
-```
-Data Collection
-        │
-        ▼
-Data Cleaning
-        │
-        ▼
-Feature Engineering
-        │
-        ▼
-Feature Selection
-        │
-        ▼
-Handle Imbalanced Data
-        │
-        ▼
-Train-Test Split
-        │
-        ▼
-Model Training
-        │
-        ▼
-Hyperparameter Tuning
-        │
-        ▼
-Model Evaluation
-        │
-        ▼
-Streamlit Deployment
-```
+| Stage | Description |
+|--------|-------------|
+| 📂 Dataset | Customer, Loan and Bureau data with **Default** as the target variable |
+| 🧹 Data Preprocessing | Missing value treatment, invalid value handling, feature engineering, scaling and feature selection using IV, VIF and domain knowledge |
+| ✂️ Train-Test Split | 75% Training, 25% Testing |
+| 🤖 Model Training | Logistic Regression, Random Forest and XGBoost with **SMOTE and Undersampling** to handle class imbalance |
+| ⚙️ Hyperparameter Optimization | RandomizedSearchCV and Optuna |
+| 📊 Model Evaluation | ROC-AUC, KS Statistic, Gini Coefficient, Rank Ordering and Classification Report |
+| 🚀 Deployment | Streamlit Web Application |
 
 ---
 
